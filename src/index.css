@@ -1,0 +1,411 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animated Gradient Background */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #2a2a2a, #1a1a1a, #000000);
+  background-size: 400% 400%;
+  animation: gradientShift 30s ease infinite;
+}
+
+.floating-element {
+  animation: float 8s ease-in-out infinite;
+}
+
+.pulse-element {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Premium Loading Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loaderSpin {
+  0% {
+    transform: rotate(0deg);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-top-color: rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: rgba(255, 255, 255, 0.2);
+    border-top-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes loadingDot {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Premium Loader */
+.premium-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.loader-ring {
+  position: absolute;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: loaderSpin 2s linear infinite;
+}
+
+.loader-ring:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+.loader-ring-2 {
+  width: 90px;
+  height: 90px;
+  top: 15px;
+  left: 15px;
+  border-top-color: rgba(255, 255, 255, 0.6);
+  animation-duration: 1.5s;
+  animation-direction: reverse;
+}
+
+.loader-ring-3 {
+  width: 60px;
+  height: 60px;
+  top: 30px;
+  left: 30px;
+  border-top-color: rgba(255, 255, 255, 0.4);
+  animation-duration: 1s;
+}
+
+.loader-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: loadingDot 1.4s ease-in-out infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  color: #ffffff;
+}
+
+.gradient-text-fire {
+  color: #ffffff;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaaaaa;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Improve touch targets */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Optimize animations for mobile */
+  .slide-in {
+    animation-duration: 0.6s;
+  }
+  
+  /* Reduce motion for better performance */
+  @media (prefers-reduced-motion: reduce) {
+    .slide-in,
+    .floating-element,
+    .pulse-element {
+      animation: none;
+    }
+    
+    .group-hover\:scale-110:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Improve text readability on mobile */
+@media (max-width: 640px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Ensure minimum touch target size */
+  button, 
+  input, 
+  select, 
+  textarea,
+  .touch-manipulation {
+    min-height: 44px;
+  }
+  
+  /* Optimize font sizes for mobile readability */
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+  
+  .text-base {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Performance optimizations */
+.glass {
+  will-change: transform;
+}
+
+/* Smooth scrolling for all elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Image loading optimizations */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Preload critical images */
+.hero-image,
+.featured-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px 300px;
+}
+
+/* Reduce animations on low-end devices */
+@media (max-width: 640px) and (max-resolution: 150dpi) {
+  .floating-element,
+  .pulse-element {
+    animation: none;
+  }
+  
+  .animated-bg {
+    background: #1a1a1a;
+    animation: none;
+  }
+}
+
+/* Animated scrolling tech stack */
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+/* Pause animation on hover */
+.glass:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+/* Search animations */
+@keyframes searchPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+  }
+}
+
+.search-focused {
+  animation: searchPulse 2s infinite;
+}
+
+/* Suggestion hover effects */
+.suggestion-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestion-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.suggestion-item:hover::before {
+  left: 100%;
+}
+
+/* Loading states */
+.search-loading {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+/* WhatsApp Button Text Animation */
+@keyframes pingText {
+  0%, 20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30%, 100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.animate-pingText {
+  animation: pingText 6s infinite;
+}

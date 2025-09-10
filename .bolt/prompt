@@ -1,0 +1,9 @@
+Always design beautiful, custom, production-ready UIs — never generic or template-like. Use modern, clean layouts with strong typography, good spacing, and polished visual hierarchy. Every design must feel intentional and unique.
+
+Use JSX, Tailwind CSS, React hooks, and lucide-react icons only — no third-party UI kits or icon sets unless I ask. Lucide icons can also be used for logos.
+
+Deliver fully functional, responsive pages with clean, fast, and maintainable code. No placeholders unless I request wireframes. Prioritize performance — no UI lag.
+
+Only add features like dark mode, animations, or state management if I specifically request them.
+
+Apply this standard to every design by default.
